@@ -1,9 +1,6 @@
 package com.sparta.basicspringsession.controller;
 
-import com.sparta.basicspringsession.dto.MemberDetailResponseDto;
-import com.sparta.basicspringsession.dto.MemberSaveRequestDto;
-import com.sparta.basicspringsession.dto.MemberSaveResponseDto;
-import com.sparta.basicspringsession.dto.MemberSimpleResponseDto;
+import com.sparta.basicspringsession.dto.*;
 import com.sparta.basicspringsession.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -31,5 +28,8 @@ public class MemberController {
         return memberService.getMember(memberId);
     }
 
-
+    @PutMapping("/members/{memberId}")
+    public MemberUpdateResponseDto updateMember(@PathVariable Long memberId, @RequestBody MemberUpdateRequestDto requestDto) {
+        return memberService.updateMember(memberId, requestDto);
+    }
 }
