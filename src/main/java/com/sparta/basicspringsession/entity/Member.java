@@ -15,4 +15,8 @@ public class Member {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    public Member(String name) {
+        this.name = name;
+    }
 }
