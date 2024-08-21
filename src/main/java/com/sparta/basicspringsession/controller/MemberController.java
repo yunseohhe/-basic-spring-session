@@ -32,4 +32,10 @@ public class MemberController {
     public MemberUpdateResponseDto updateMember(@PathVariable Long memberId, @RequestBody MemberUpdateRequestDto requestDto) {
         return memberService.updateMember(memberId, requestDto);
     }
+
+    @DeleteMapping("/members/{memberId}")
+    public void deleteMember(@PathVariable Long memberId) {
+        memberService.deleteMember(memberId);
+
+    }
 }
